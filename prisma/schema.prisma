@@ -24,13 +24,14 @@ model PollOption {
   title  String
   poll   Poll   @relation(fields: [pollId], references: [id])
   pollId String
-  vote   Vote[]
+
+  vote Vote[]
 }
 
 model Vote {
   id           Int      @id @default(autoincrement())
-  sessionId    String   
-  pollOptionId String   
+  sessionId    String
+  pollOptionId String
   pollId       String
   createdAt    DateTime @default(now())
 
